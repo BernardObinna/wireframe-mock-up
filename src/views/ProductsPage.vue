@@ -1,101 +1,108 @@
 <template>
-  <div class="page">
-    <div class="row mb-5">
-      <div class="col-lg-6">
-        <div class="d-flex justify-content-between">
-          <h1>Products</h1>
-          <input
-            type="text"
-            class="px-2 ms-4 search-bar"
-            placeholder="Search for keywords...."
-            v-model="state.searchTerm"
-          />
+  <ContentLayout>
+    <div class="page">
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <div class="d-flex justify-content-between">
+            <h1>Products</h1>
+            <input
+              type="text"
+              class="px-2 ms-4 search-bar"
+              placeholder="Search for keywords...."
+              v-model="state.searchTerm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in displayedEntries" :key="index">
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                  <div class="d-flex justify-content-center">
+                    <ButtonComponent
+                      text="Edit"
+                      @click="selectEntry(index, item)"
+                    /><ButtonComponent
+                      classes="ms-2 text-dark fw-bold bg-white"
+                      text="Delete"
+                      @click="deleteEntry(index)"
+                    />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p
+            class="text-center"
+            v-if="
+              state.searchTerm &&
+              state?.tableItems?.length &&
+              !displayedEntries?.length
+            "
+          >
+            No search result
+          </p>
+          <p class="text-center" v-if="!state?.tableItems?.length">
+            No entries. Create some or refresh the page
+          </p>
+        </div>
+        <div class="col-lg-6 mt-5 mt-lg-0">
+          <form
+            @submit.prevent="submitForm"
+            class="form text-center ms-lg-auto"
+          >
+            <h4>Header text</h4>
+            <p class="text mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </p>
+
+            <div>
+              <input
+                type="text"
+                class=""
+                placeholder="Name"
+                v-model="state.formData.name"
+                required
+              />
+            </div>
+
+            <div>
+              <input
+                type="number"
+                class="my-4"
+                placeholder="Price"
+                v-model="state.formData.price"
+                required
+              />
+            </div>
+
+            <ButtonComponent
+              classes="w-100"
+              :text="state.isEdit ? 'Save' : 'Create'"
+            />
+          </form>
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-lg-6">
-        <table class="table table-bordered text-center">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in displayedEntries" :key="index">
-              <td>{{ item.name }}</td>
-              <td>{{ item.price }}</td>
-              <td>
-                <div class="d-flex justify-content-center">
-                  <ButtonComponent
-                    text="Edit"
-                    @click="selectEntry(index, item)"
-                  /><ButtonComponent
-                    classes="ms-2 text-dark fw-bold bg-white"
-                    text="Delete"
-                    @click="deleteEntry(index)"
-                  />
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p
-          class="text-center"
-          v-if="
-            state.searchTerm &&
-            state?.tableItems?.length &&
-            !displayedEntries?.length
-          "
-        >
-          No search result
-        </p>
-        <p class="text-center" v-if="!state?.tableItems?.length">
-          No entries. Create some or refresh the page
-        </p>
-      </div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
-        <form @submit.prevent="submitForm" class="form text-center ms-lg-auto">
-          <h4>Header text</h4>
-          <p class="text mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </p>
-
-          <div>
-            <input
-              type="text"
-              class=""
-              placeholder="Name"
-              v-model="state.formData.name"
-              required
-            />
-          </div>
-
-          <div>
-            <input
-              type="number"
-              class="my-4"
-              placeholder="Price"
-              v-model="state.formData.price"
-              required
-            />
-          </div>
-
-          <ButtonComponent
-            classes="w-100"
-            :text="state.isEdit ? 'Save' : 'Create'"
-          />
-        </form>
-      </div>
-    </div>
-  </div>
+  </ContentLayout>
 </template>
 
 <script setup>
 import ButtonComponent from "@/components/ButtonComponent.vue";
+import ContentLayout from "@/layouts/ContentLayout.vue";
+
 import { onMounted, reactive, computed } from "vue";
 
 const state = reactive({

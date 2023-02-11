@@ -1,73 +1,76 @@
 <template>
-  <div class="content page">
-    <div class="">
-      <section class="section-1 d-lg-flex">
-        <div class="">
-          <div>
-            <h1 class="fw-bold heading">
-              Lorem ipsum dolor sit amet consectetur
-            </h1>
-            <p class="text mt-3 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div class="d-flex">
-              <ButtonComponent />
-              <ButtonComponent
-                classes="ms-2 text-dark fw-bold bg-white"
-                text="See Workspace"
-              />
+  <ContentLayout>
+    <div class="content page">
+      <div class="">
+        <section class="section-1 d-lg-flex">
+          <div class="">
+            <div>
+              <h1 class="fw-bold heading">
+                Lorem ipsum dolor sit amet consectetur
+              </h1>
+              <p class="text mt-3 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="d-flex">
+                <ButtonComponent />
+                <ButtonComponent
+                  classes="ms-2 text-dark fw-bold bg-white"
+                  text="See Workspace"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="position-relative ms-lg-auto">
+          <div class="position-relative ms-lg-auto">
+            <div class="background mt-5 mt-lg-0">
+              <BoxComponent />
+            </div>
+            <div class="mini-background">
+              <BoxComponent classes="dark" />
+            </div>
+          </div>
+        </section>
+
+        <!-- second section -->
+        <section class="section-2 d-lg-flex justify-content-lg-between">
+          <div>
+            <h6 class="fw-bold heading">Header Text</h6>
+            <p class="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore
+            </p>
+          </div>
+
           <div class="background mt-5 mt-lg-0">
             <BoxComponent />
           </div>
-          <div class="mini-background">
-            <BoxComponent classes="dark" />
+
+          <div class="align-self-end mt-5">
+            <h6 class="fw-bold heading">Header Text</h6>
+            <p class="text mt-3 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- second section -->
-      <section class="section-2 d-lg-flex justify-content-lg-between">
-        <div>
-          <h6 class="fw-bold heading">Header Text</h6>
-          <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore
-          </p>
-        </div>
-
-        <div class="background mt-5 mt-lg-0">
-          <BoxComponent />
-        </div>
-
-        <div class="align-self-end mt-5">
-          <h6 class="fw-bold heading">Header Text</h6>
-          <p class="text mt-3 mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore
-          </p>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
-  </div>
+  </ContentLayout>
 </template>
 <script>
 import ButtonComponent from "@/components/ButtonComponent.vue";
 import BoxComponent from "@/components/BoxComponent.vue";
+import ContentLayout from "@/layouts/ContentLayout.vue";
 export default {
   name: "LandingFooter",
-  components: { ButtonComponent, BoxComponent },
+  components: { ButtonComponent, BoxComponent, ContentLayout },
 };
 </script>
 

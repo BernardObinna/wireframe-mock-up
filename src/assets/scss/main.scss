@@ -2,29 +2,6 @@
 @import "core/mixins";
 
 @import "core/fonts";
-// @import "core/text";
-// @import "core/layout";
-// @import "core/spaces";
-
-// @import "utilities/pagination";
-// @import "utilities/forms";
-// @import "utilities/buttons";
-// @import "utilities/general";
-// @import "utilities/gradients";
-// @import "utilities/backgrounds";
-// @import "utilities/borders";
-// @import "utilities/banners";
-
-// @import "animations/shimmer";
-
-// #content {
-//   background-color: #f7f8fa;
-// }
-
-// .pace .pace-progress {
-//   background-color: $color-red;
-//   height: 4px;
-// }
 
 .page {
   padding: 0 8%;
@@ -35,9 +12,15 @@
 .content {
   width: 100%;
   min-height: toRem(400px);
-  // max-width: toRem(80px);
 }
 
 .router-link-exact-active {
   color: blue !important;
+}
+
+.perfect-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -22,7 +22,7 @@ const router = createRouter({
     },
     {
       path: "/:pathMatch(.*)*",
-      name: "home",
+      name: "404",
       component: () => import("../views/404Page.vue"),
     },
     // {
