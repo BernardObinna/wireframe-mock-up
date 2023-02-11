@@ -40,21 +40,36 @@
         </table>
       </div>
       <div class="col-lg-6">
-        <form action="" class="form text-center ms-lg-auto">
+        <form @submit.prevent="submitForm" class="form text-center ms-lg-auto">
           <h4>Header text</h4>
           <p class="text mb-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
 
           <div>
-            <input type="text" class="" placeholder="Name" />
+            <input
+              type="text"
+              class=""
+              placeholder="Name"
+              v-model="state.formData.name"
+              required
+            />
           </div>
 
           <div>
-            <input type="text" class="my-4" placeholder="Price" />
+            <input
+              type="number"
+              class="my-4"
+              placeholder="Price"
+              v-model="state.formData.price"
+              required
+            />
           </div>
 
-          <ButtonComponent classes="w-100" />
+          <ButtonComponent
+            classes="w-100"
+            :text="state.isEdit ? 'Save' : 'Create'"
+          />
         </form>
       </div>
     </div>
@@ -65,7 +80,15 @@
 import ButtonComponent from "@/components/ButtonComponent.vue";
 import { onMounted, reactive } from "vue";
 
-const state = reactive({ tableItems: [] });
+const state = reactive({
+  tableItems: [],
+  isEdit: false,
+  selectedEntry: {},
+  formData: {
+    name: "",
+    price: "",
+  },
+});
 
 //mounted
 onMounted(async () => {
@@ -88,12 +111,26 @@ onMounted(async () => {
         price: "Lorem Ipsum",
       },
     ];
-    localStorage.tableItems = JSON.stringify(state.tableItems);
+    updateLocalStorage();
   } else {
     console.log("hii", localStorage.getItem("tableItems"));
     state.tableItems = JSON.parse(localStorage.tableItems);
   }
 });
+
+// methods
+const submitForm = (e) => {
+  state.tableItems.push(state.formData);
+  updateLocalStorage();
+  state.formData = {
+    name: "",
+    price: "",
+  };
+};
+
+const updateLocalStorage = () => {
+  localStorage.tableItems = JSON.stringify(state.tableItems);
+};
 // components: {
 //   ButtonComponent;
 // }
