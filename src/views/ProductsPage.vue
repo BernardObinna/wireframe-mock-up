@@ -1,12 +1,12 @@
 <template>
   <div class="page">
     <div class="row mb-5">
-      <div class="col-6">
+      <div class="col-lg-6">
         <div class="d-flex justify-content-between">
           <h1>Products</h1>
           <input
             type="text"
-            class="px-2 search-bar"
+            class="px-2 ms-4 search-bar"
             placeholder="Search for keywords...."
           />
         </div>
@@ -78,7 +78,9 @@ export default {
 
   .search-bar {
     border-radius: 4px;
-    min-width: toRem(300px);
+    // min-width: toRem(300px);
+    width: 100%;
+    max-width: toRem(300px);
   }
 
   .form {

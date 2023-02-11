@@ -10,54 +10,57 @@ $breakpoint-xx-large: 2560px;
 /* MIXINS FOR MEDIA QUERIES ----------- */
 
 @mixin screen($size, $type: max, $pixels: 600) {
-  @if $size== 'tiny' {
+  @if $size== "tiny" {
     @media screen and (max-width: 400px) {
       @content;
     }
   }
-  @if $size== 'small' {
+  @if $size== "small" {
     @media screen and (max-width: $breakpoint-small) {
       @content;
     }
   }
-  @if $size== 'med-small' {
+  @if $size== "med-small" {
     @media screen and (max-width: $breakpoint-med-small) {
       @content;
     }
-  } @else if $size== 'med' {
+  } @else if $size== "med" {
     @media screen and (max-width: $breakpoint-med) {
       @content;
     }
-  } @else if $size== 'mid' {
+  } @else if $size== "mid" {
     @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-med) {
       @content;
     }
-  } @else if $size== 'middle' {
+  } @else if $size== "middle" {
     @media screen and (min-width: $breakpoint-small) {
       @content;
     }
-  } @else if $size== 'large' {
+  } @else if $size== "tablet" {
+    @media screen and (min-width: $breakpoint-med-small) {
+      @content;
+    }
+  } @else if $size== "large" {
     @media screen and (min-width: $breakpoint-med) {
       @content;
     }
-  } @else if $size== 'x-large' {
+  } @else if $size== "x-large" {
     @media screen and (min-width: $breakpoint-large) {
       @content;
     }
-  } @else if $size== '2k-screen' {
-    @media screen and (min-width: 1500px){
+  } @else if $size== "2k-screen" {
+    @media screen and (min-width: 1500px) {
       @content;
     }
-  }
-  @else if $size== 'xx-large' {
+  } @else if $size== "xx-large" {
     @media screen and (min-width: $breakpoint-x-large) {
       @content;
     }
-  } @else if $size== 'xxx-large' {
+  } @else if $size== "xxx-large" {
     @media screen and (min-width: $breakpoint-xx-large) {
       @content;
     }
-  }  @else if $size== 'custom' {
+  } @else if $size== "custom" {
     // @media screen and ($type + -width : $pixels + px) {
     // @content;
     // }
@@ -66,7 +69,7 @@ $breakpoint-xx-large: 2560px;
 
 //other mixins
 @mixin orb($color) {
-  content: '';
+  content: "";
   height: 10px;
   width: 10px;
   background-color: $color;

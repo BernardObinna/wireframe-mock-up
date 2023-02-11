@@ -1,13 +1,13 @@
 <template>
-  <div class="content page">
-    <nav class="py-0">
+  <div class="content">
+    <nav class="page py-0">
       <div class="">
         <div class="d-flex align-items-center">
-          <div class="background">
+          <div class="background d-none d-lg-block">
             <BoxComponent />
           </div>
 
-          <div class="my-4 my-lg-0 ms-5">
+          <div class="my-4 my-lg-0 ms-lg-5">
             <div>
               <h1 class="fw-bold heading">
                 Lorem ipsum dolor sit consecteturtur
@@ -38,9 +38,9 @@ export default {
 @import "@/assets/scss/core/variables";
 
 .content {
-  min-width: 100%;
-  min-height: toRem(400px);
   background-color: $color-bg-lgt-grey;
+
+  min-height: toRem(300px);
 
   .heading {
     max-width: toRem(400px);
@@ -52,7 +52,6 @@ export default {
   .background {
     height: toRem(400px);
     width: toRem(400px);
-    // width: 30%;
     position: relative;
     top: -4em;
   }

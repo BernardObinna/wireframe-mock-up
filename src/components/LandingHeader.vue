@@ -77,6 +77,7 @@ export default {
 .content {
   padding-top: toRem(16px);
   padding-bottom: toRem(16px);
+  min-height: toRem(100px);
 }
 
 .navbar-brand {

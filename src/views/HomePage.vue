@@ -48,7 +48,7 @@
           <BoxComponent />
         </div>
 
-        <div class="align-self-end">
+        <div class="align-self-end mt-5">
           <h6 class="fw-bold heading">Header Text</h6>
           <p class="text mt-3 mb-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -76,13 +76,13 @@ export default {
 @import "@/assets/scss/core/variables";
 
 .content {
-  min-width: 100%;
-  min-height: toRem(400px);
   //   margin-top: 5em;
   margin-bottom: 10em;
 
   .heading {
-    max-width: toRem(300px);
+    @include screen("large") {
+      max-width: toRem(300px);
+    }
   }
   .text {
     max-width: toRem(360px);
@@ -90,22 +90,40 @@ export default {
   }
   .background {
     height: toRem(400px);
-    width: toRem(400px);
+    width: 100%;
+    max-width: toRem(400px);
     position: relative;
-    right: toRem(90px);
+    // right: toRem(90px);
   }
   .mini-background {
     height: toRem(200px);
     width: toRem(200px);
     position: absolute;
-    top: toRem(-60px);
-    right: toRem(0px);
+    top: 0;
+    @include screen("large") {
+      right: toRem(0px);
+      top: toRem(-60px);
+    }
   }
 
+  .section-1 {
+    .background {
+      @include screen("large") {
+        width: toRem(400px);
+        right: 20%;
+      }
+      //   @include screen("large") {
+      //     width: toRem(400px);
+      //     right: 10%;
+      //   }
+    }
+  }
   .section-2 {
     margin-top: toRem(120px);
     .text {
-      max-width: toRem(220px);
+      @include screen("large") {
+        max-width: toRem(220px);
+      }
     }
   }
 }
