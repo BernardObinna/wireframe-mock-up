@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-dark text-white py-2 px-4" :class="classes">
+  <button class="btn btn-dark py-2 px-3" :class="classes">
     {{ text }}
   </button>
 </template>
@@ -18,3 +18,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/core/mixins";
+@import "@/assets/scss/core/variables";
+
+.btn {
+  color: white;
+}
+</style>
