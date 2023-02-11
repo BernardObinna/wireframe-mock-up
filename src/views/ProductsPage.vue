@@ -57,7 +57,7 @@
           No entries. Create some or refresh the page
         </p>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 mt-5 mt-lg-0">
         <form @submit.prevent="submitForm" class="form text-center ms-lg-auto">
           <h4>Header text</h4>
           <p class="text mb-5">

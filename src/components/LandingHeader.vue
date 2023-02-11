@@ -21,25 +21,17 @@
       />
       <div class="collapse navbar-collapse d-lg-none" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <router-link class="nav-link" to="#landing-how-it-works-section"
-            >Home</router-link
-          >
-          <router-link class="nav-link" to="#landing-vendor-section"
-            >About</router-link
-          >
+          <router-link class="nav-link" to="/">Home</router-link>
+          <a class="nav-link" href="javascript:">About</a>
           <a class="nav-link" href="javascript:">Services</a>
-          <a class="nav-link" href="javascript:">Products</a>
+          <router-link class="nav-link" to="/products">Products</router-link>
         </div>
       </div>
 
       <div class="nav-links d-none d-lg-flex">
         <router-link class="nav-link" to="/">Home</router-link>
-        <router-link class="nav-link" to="#landing-vendor-section"
-          >About</router-link
-        >
-        <router-link class="nav-link" to="#landing-vendor-section"
-          >Services</router-link
-        >
+        <router-link class="nav-link" to="/about">About</router-link>
+        <router-link class="nav-link" to="/services">Services</router-link>
         <router-link class="nav-link" to="products">Products</router-link>
       </div>
 

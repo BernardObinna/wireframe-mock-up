@@ -37,3 +37,7 @@
   min-height: toRem(400px);
   // max-width: toRem(80px);
 }
+
+.router-link-exact-active {
+  color: blue !important;
+}
