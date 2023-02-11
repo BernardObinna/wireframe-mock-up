@@ -156,11 +156,15 @@ const displayedEntries = computed(() => {
 const submitForm = () => {
   state.isEdit ? editEntry() : createEntry();
   updateLocalStorage();
+  resetForm();
+  state.isEdit = false;
+};
+
+const resetForm = () => {
   state.formData = {
     name: "",
     price: "",
   };
-  state.isEdit = false;
 };
 
 const createEntry = () => {
@@ -178,6 +182,8 @@ const updateLocalStorage = () => {
 const deleteEntry = (index) => {
   state.tableItems.splice(index, 1);
   updateLocalStorage();
+  state.isEdit = false;
+  resetForm();
 };
 
 const selectEntry = (index, item) => {
