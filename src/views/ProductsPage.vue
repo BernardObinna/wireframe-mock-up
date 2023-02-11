@@ -29,7 +29,10 @@
               <td>{{ item.price }}</td>
               <td>
                 <div class="d-flex justify-content-center">
-                  <ButtonComponent text="Edit" /><ButtonComponent
+                  <ButtonComponent
+                    text="Edit"
+                    @click="selectEntry(index, item)"
+                  /><ButtonComponent
                     classes="ms-2 text-dark fw-bold bg-white"
                     text="Delete"
                     @click="deleteEntry(index)"
@@ -84,7 +87,7 @@ import { onMounted, reactive } from "vue";
 const state = reactive({
   tableItems: [],
   isEdit: false,
-  selectedEntry: {},
+  selectedEntryIndex: null,
   formData: {
     name: "",
     price: "",
@@ -121,14 +124,23 @@ onMounted(async () => {
 
 // methods
 const submitForm = (e) => {
-  state.tableItems.push(state.formData);
+  state.isEdit ? editEntry() : createEntry();
   updateLocalStorage();
   state.formData = {
     name: "",
     price: "",
   };
+  state.isEdit = false;
 };
 
+const createEntry = () => {
+  state.tableItems.push(state.formData);
+};
+
+const editEntry = () => {
+  state.tableItems[state.selectedEntryIndex] = state.formData;
+  state.selectEntry = null;
+};
 const updateLocalStorage = () => {
   localStorage.tableItems = JSON.stringify(state.tableItems);
 };
@@ -136,6 +148,12 @@ const updateLocalStorage = () => {
 const deleteEntry = (index) => {
   state.tableItems.splice(index, 1);
   updateLocalStorage();
+};
+
+const selectEntry = (index, item) => {
+  state.isEdit = true;
+  state.selectedEntryIndex = index;
+  state.formData = { ...item };
 };
 // components: {
 //   ButtonComponent;
