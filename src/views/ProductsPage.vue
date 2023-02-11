@@ -24,9 +24,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in 12" :key="item">
-              <td>Lorem Ipsum</td>
-              <td>Lorem Ipsum</td>
+            <tr v-for="(item, index) in state.tableItems" :key="index">
+              <td>{{ item.name }}</td>
+              <td>{{ item.price }}</td>
               <td>
                 <div class="d-flex justify-content-center">
                   <ButtonComponent text="Edit" /><ButtonComponent
@@ -61,12 +61,45 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ButtonComponent from "@/components/ButtonComponent.vue";
+import { onMounted, reactive } from "vue";
 
-export default {
-  components: { ButtonComponent },
-};
+const state = reactive({ tableItems: [] });
+
+//mounted
+onMounted(async () => {
+  if (!localStorage?.tableItems?.length && !state.tableItems.length) {
+    state.tableItems = [
+      {
+        name: "Lorem Ipsum",
+        price: "Lorem Ipsum",
+      },
+      {
+        name: "Lorem Ipsum",
+        price: "Lorem Ipsum",
+      },
+      {
+        name: "Lorem Ipsum",
+        price: "Lorem Ipsum",
+      },
+      {
+        name: "Lorem Ipsum",
+        price: "Lorem Ipsum",
+      },
+    ];
+    localStorage.tableItems = JSON.stringify(state.tableItems);
+  } else {
+    console.log("hii", localStorage.getItem("tableItems"));
+    state.tableItems = JSON.parse(localStorage.tableItems);
+  }
+});
+// components: {
+//   ButtonComponent;
+// }
+// export default {
+//   components: { ButtonComponent },
+// };
 </script>
 
 <style lang="scss" scoped>
