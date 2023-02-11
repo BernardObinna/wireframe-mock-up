@@ -33,18 +33,14 @@
       </div>
 
       <div class="nav-links d-none d-lg-flex">
-        <router-link class="nav-link" to="#landing-how-it-works-section"
-          >Home</router-link
-        >
+        <router-link class="nav-link" to="/">Home</router-link>
         <router-link class="nav-link" to="#landing-vendor-section"
           >About</router-link
         >
         <router-link class="nav-link" to="#landing-vendor-section"
           >Services</router-link
         >
-        <router-link class="nav-link" to="#landing-vendor-section"
-          >Products</router-link
-        >
+        <router-link class="nav-link" to="products">Products</router-link>
       </div>
 
       <div class="nav-links d-none d-lg-flex">
@@ -68,9 +64,10 @@ export default {
 @import "@/assets/scss/core/variables";
 
 .page {
-  // @include screen("large") {
   padding: 0 8%;
-  // }
+  @include screen("large") {
+    margin-bottom: 5em;
+  }
 }
 #nav-toggle {
   max-width: toRem(32px);

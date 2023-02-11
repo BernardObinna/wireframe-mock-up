@@ -1,5 +1,5 @@
 <template>
-  <div class="box" :class="classes"></div>
+  <div :class="`${classes} box `"></div>
 </template>
 
 <script>

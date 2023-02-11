@@ -22,7 +22,7 @@
 }
 
 .fs-12-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 0.86rem !important;
     line-height: 1.08rem !important;
   }
@@ -34,7 +34,7 @@
 }
 
 .fs-13-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 0.93rem;
     line-height: 1.15rem;
   }
@@ -46,7 +46,7 @@
 }
 
 .fs-14-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 1rem;
     line-height: 1.22rem;
   }
@@ -58,7 +58,7 @@
 }
 
 .fs-15-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 1.08rem;
     line-height: 1.36rem;
   }
@@ -70,7 +70,7 @@
 }
 
 .fs-16-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: toRem(16px) !important;
     line-height: toRem(24px) !important;
   }
@@ -82,7 +82,7 @@
 }
 
 .fs-20-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 1.43rem !important;
     line-height: 1.79rem !important;
   }
@@ -94,14 +94,14 @@
 }
 
 .fs-25-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 1.72rem;
     line-height: 2.15rem;
   }
 }
 
 .fs-28-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 2rem;
     line-height: 2.33rem;
   }
@@ -140,7 +140,7 @@
 }
 
 .fs-1-5-r-mob {
-  @include screen('med') {
+  @include screen("med") {
     font-size: 1.5rem !important;
   }
 }
@@ -165,10 +165,9 @@
   font-size: 28px;
 }
 
-.text-grey-59e{
+.text-grey-59e {
   color: $color-faded-grey;
 }
-
 
 .line-height-12 {
   line-height: 0.86rem !important;
@@ -183,7 +182,7 @@
 }
 
 .letter-space-02-mob {
-  @include screen('med') {
+  @include screen("med") {
     letter-spacing: 0.2em !important;
   }
 }
@@ -210,13 +209,12 @@
   top: -0.2rem;
 }
 
-.attention{
-  font-size: .8rem;
+.attention {
+  font-size: 0.8rem;
   margin-top: 4px;
   display: block;
   color: red;
 }
-
 
 .navbar-brand {
   font-style: normal;
@@ -224,7 +222,7 @@
   font-size: toRem(32px);
   line-height: toRem(40px);
   color: $color-primary;
-  @include screen('med') {
+  @include screen("med") {
     font-size: toRem(24px);
     line-height: toRem(30px);
   }

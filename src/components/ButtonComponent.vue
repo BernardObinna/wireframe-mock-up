@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-dark py-2 px-3" :class="classes">
+  <button :class="`${classes} btn btn-dark py-2 px-3`">
     {{ text }}
   </button>
 </template>

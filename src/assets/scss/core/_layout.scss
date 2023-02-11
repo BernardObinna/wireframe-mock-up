@@ -278,45 +278,45 @@ body {
   border-radius: 8px;
 }
 
-.content {
-  padding: toRem(80px) toRem(32px);
-  @include screen("med") {
-    padding: toRem(64px) toRem(24px);
-  }
+// .content {
+//   padding: toRem(80px) toRem(32px);
+//   @include screen("med") {
+//     padding: toRem(64px) toRem(24px);
+//   }
 
-  //  desktop
-  @include screen("x-large") {
-    //padding: toRem(80px) toRem(100px);
-    padding: toRem(80px) 8%;
-  }
+//   //  desktop
+//   @include screen("x-large") {
+//     //padding: toRem(80px) toRem(100px);
+//     padding: toRem(80px) 8%;
+//   }
 
-  @media screen and (min-width: 1600px) {
-    padding: toRem(80px) 12%;
-  }
+//   @media screen and (min-width: 1600px) {
+//     padding: toRem(80px) 12%;
+//   }
 
-  @media screen and (min-width: 1800px) {
-    padding: toRem(80px) 18%;
-  }
+//   @media screen and (min-width: 1800px) {
+//     padding: toRem(80px) 18%;
+//   }
 
-  @media screen and (min-width: 2050px) {
-    padding: toRem(80px) 20%;
-  }
-  //
-  //@media screen and (min-width: 2450px) {
-  //  padding: toRem(80px) toRem(608px);
-  //}
-  //
-  ////// desktop 2k
-  ////@media screen and (min-width: 2420px){
-  ////  padding: toRem(80px) toRem(608px);
-  ////}
-  //
-  //
-  //  4k desktop
-  @include screen("xxx-large") {
-    padding: toRem(80px) 23%;
-  }
-}
+//   @media screen and (min-width: 2050px) {
+//     padding: toRem(80px) 20%;
+//   }
+//   //
+//   //@media screen and (min-width: 2450px) {
+//   //  padding: toRem(80px) toRem(608px);
+//   //}
+//   //
+//   ////// desktop 2k
+//   ////@media screen and (min-width: 2420px){
+//   ////  padding: toRem(80px) toRem(608px);
+//   ////}
+//   //
+//   //
+//   //  4k desktop
+//   @include screen("xxx-large") {
+//     padding: toRem(80px) 23%;
+//   }
+// }
 
 .sect-header {
   text-align: center;
