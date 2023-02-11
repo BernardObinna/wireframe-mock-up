@@ -1,26 +1,30 @@
-@import 'core/variables';
-@import 'core/mixins';
-@import 'core/fonts';
-@import 'core/text';
-@import 'core/layout';
-@import 'core/spaces';
+@import "core/variables";
+@import "core/mixins";
 
-@import 'utilities/pagination';
-@import 'utilities/forms';
-@import 'utilities/buttons';
-@import 'utilities/general';
-@import 'utilities/gradients';
-@import 'utilities/backgrounds';
-@import 'utilities/borders';
-@import 'utilities/banners';
+// @import "core/fonts";
+// @import "core/text";
+// @import "core/layout";
+// @import "core/spaces";
 
-@import 'animations/shimmer';
+// @import "utilities/pagination";
+// @import "utilities/forms";
+// @import "utilities/buttons";
+// @import "utilities/general";
+// @import "utilities/gradients";
+// @import "utilities/backgrounds";
+// @import "utilities/borders";
+// @import "utilities/banners";
 
-#content {
-  background-color: #f7f8fa;
-}
+// @import "animations/shimmer";
 
-.pace .pace-progress {
-  background-color: $color-red;
-  height: 4px;
+// #content {
+//   background-color: #f7f8fa;
+// }
+
+// .pace .pace-progress {
+//   background-color: $color-red;
+//   height: 4px;
+// }
+.page {
+  padding: 0 8%;
 }

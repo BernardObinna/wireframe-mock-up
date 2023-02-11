@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-light content">
-    <div class="container-fluid px-xl-0">
+  <nav class="navbar navbar-light content page">
+    <div class="container-fluid px-0">
       <router-link to="#" class="navbar-brand">
         <h4 class="fw-bold">
           Logo
@@ -48,10 +48,7 @@
       </div>
 
       <div class="nav-links d-none d-lg-flex">
-        <ButtonComponent
-          text=" Call to Actions"
-          classes="btn btn-dark text-white"
-        ></ButtonComponent>
+        <ButtonComponent text="Call to Actions"></ButtonComponent>
       </div>
     </div>
   </nav>
@@ -70,6 +67,11 @@ export default {
 @import "@/assets/scss/core/mixins";
 @import "@/assets/scss/core/variables";
 
+.page {
+  // @include screen("large") {
+  padding: 0 8%;
+  // }
+}
 #nav-toggle {
   max-width: toRem(32px);
   max-height: toRem(32px);

@@ -77,7 +77,7 @@ html {
 }
 
 .w-lg-35 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 35% !important;
   }
 }
@@ -87,13 +87,13 @@ html {
 }
 
 .w-lg-40 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 40% !important;
   }
 }
 
 .w-lg-43 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 43% !important;
   }
 }
@@ -103,13 +103,13 @@ html {
 }
 
 .w-lg-45 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 45% !important;
   }
 }
 
 .w-lg-50 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 50% !important;
   }
 }
@@ -118,9 +118,8 @@ html {
   width: 60% !important;
 }
 
-
 .w-lg-60 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 60% !important;
   }
 }
@@ -134,19 +133,19 @@ html {
 }
 
 .w-lg-70 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 70% !important;
   }
 }
 
 .w-lg-74 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 74% !important;
   }
 }
 
 .w-lg-75 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 75% !important;
   }
 }
@@ -167,9 +166,8 @@ html {
   width: 90% !important;
 }
 
-
 .w-lg-100 {
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 100% !important;
   }
 }
@@ -228,11 +226,11 @@ body {
 .centralize {
   margin-left: auto;
   margin-right: auto;
-  @include screen('x-large') {
+  @include screen("x-large") {
     width: 70%;
   }
 
-  @include screen('med') {
+  @include screen("med") {
     width: 85%;
   }
 }
@@ -282,12 +280,12 @@ body {
 
 .content {
   padding: toRem(80px) toRem(32px);
-  @include screen('med') {
+  @include screen("med") {
     padding: toRem(64px) toRem(24px);
   }
 
   //  desktop
-  @include screen('x-large') {
+  @include screen("x-large") {
     //padding: toRem(80px) toRem(100px);
     padding: toRem(80px) 8%;
   }
@@ -315,7 +313,7 @@ body {
   //
   //
   //  4k desktop
-  @include screen('xxx-large') {
+  @include screen("xxx-large") {
     padding: toRem(80px) 23%;
   }
 }
@@ -328,7 +326,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  @include screen('med') {
+  @include screen("med") {
     font-size: toRem(24px);
     line-height: toRem(30px);
   }
@@ -337,5 +335,3 @@ body {
 img {
   width: 100%;
 }
-
-
