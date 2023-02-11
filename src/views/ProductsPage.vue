@@ -96,23 +96,26 @@ const state = reactive({
 
 //mounted
 onMounted(async () => {
-  if (!localStorage?.tableItems?.length && !state.tableItems.length) {
+  if (
+    !JSON.parse(localStorage?.tableItems)?.length &&
+    !state.tableItems.length
+  ) {
     state.tableItems = [
       {
         name: "Lorem Ipsum",
-        price: "Lorem Ipsum",
+        price: "1",
       },
       {
         name: "Lorem Ipsum",
-        price: "Lorem Ipsum",
+        price: "2",
       },
       {
         name: "Lorem Ipsum",
-        price: "Lorem Ipsum",
+        price: "3",
       },
       {
         name: "Lorem Ipsum",
-        price: "Lorem Ipsum",
+        price: "4",
       },
     ];
     updateLocalStorage();
