@@ -1,0 +1,26 @@
+@import "core/variables";
+@import "core/mixins";
+
+@import "core/fonts";
+
+.page {
+  padding: 0 8%;
+  max-width: toRem(1350px);
+  margin-left: auto;
+  margin-right: auto;
+}
+.content {
+  width: 100%;
+  min-height: toRem(400px);
+}
+
+.router-link-exact-active {
+  color: blue !important;
+}
+
+.perfect-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
