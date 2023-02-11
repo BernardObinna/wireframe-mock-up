@@ -32,6 +32,7 @@
                   <ButtonComponent text="Edit" /><ButtonComponent
                     classes="ms-2 text-dark fw-bold bg-white"
                     text="Delete"
+                    @click="deleteEntry(index)"
                   />
                 </div>
               </td>
@@ -130,6 +131,11 @@ const submitForm = (e) => {
 
 const updateLocalStorage = () => {
   localStorage.tableItems = JSON.stringify(state.tableItems);
+};
+
+const deleteEntry = (index) => {
+  state.tableItems.splice(index, 1);
+  updateLocalStorage();
 };
 // components: {
 //   ButtonComponent;
