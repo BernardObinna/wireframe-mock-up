@@ -155,7 +155,7 @@ const displayedEntries = computed(() => {
     data = state.tableItems.filter(
       (item) =>
         item.name.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
-        item.price.toLowerCase().includes(state.searchTerm.toLowerCase())
+        String(item.price).includes(state.searchTerm.toLowerCase())
     );
   }
   return data;

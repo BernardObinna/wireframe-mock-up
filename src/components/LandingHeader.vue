@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar sticky-top navbar-light bg-white content page">
     <div class="container-fluid px-0">
-      <router-link to="#" class="navbar-brand">
+      <router-link to="/" class="navbar-brand">
         <h4 class="fw-bold">
           Logo
           <span class="dot"></span>
