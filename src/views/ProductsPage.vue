@@ -8,6 +8,7 @@
             type="text"
             class="px-2 ms-4 search-bar"
             placeholder="Search for keywords...."
+            v-model="state.searchTerm"
           />
         </div>
       </div>
@@ -24,7 +25,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, index) in state.tableItems" :key="index">
+            <tr v-for="(item, index) in displayedEntries" :key="index">
               <td>{{ item.name }}</td>
               <td>{{ item.price }}</td>
               <td>
@@ -42,6 +43,19 @@
             </tr>
           </tbody>
         </table>
+        <p
+          class="text-center"
+          v-if="
+            state.searchTerm &&
+            state?.tableItems?.length &&
+            !displayedEntries?.length
+          "
+        >
+          No search result
+        </p>
+        <p class="text-center" v-if="!state?.tableItems?.length">
+          No entries. Create some or refresh the page
+        </p>
       </div>
       <div class="col-lg-6">
         <form @submit.prevent="submitForm" class="form text-center ms-lg-auto">
@@ -82,10 +96,11 @@
 
 <script setup>
 import ButtonComponent from "@/components/ButtonComponent.vue";
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, computed } from "vue";
 
 const state = reactive({
   tableItems: [],
+  searchTerm: "",
   isEdit: false,
   selectedEntryIndex: null,
   formData: {
@@ -125,8 +140,20 @@ onMounted(async () => {
   }
 });
 
+const displayedEntries = computed(() => {
+  let data = state.tableItems;
+  if (state.searchTerm) {
+    data = state.tableItems.filter(
+      (item) =>
+        item.name.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
+        item.price.toLowerCase().includes(state.searchTerm.toLowerCase())
+    );
+  }
+  return data;
+});
+
 // methods
-const submitForm = (e) => {
+const submitForm = () => {
   state.isEdit ? editEntry() : createEntry();
   updateLocalStorage();
   state.formData = {
@@ -158,12 +185,6 @@ const selectEntry = (index, item) => {
   state.selectedEntryIndex = index;
   state.formData = { ...item };
 };
-// components: {
-//   ButtonComponent;
-// }
-// export default {
-//   components: { ButtonComponent },
-// };
 </script>
 
 <style lang="scss" scoped>
@@ -175,7 +196,6 @@ const selectEntry = (index, item) => {
 
   .search-bar {
     border-radius: 4px;
-    // min-width: toRem(300px);
     width: 100%;
     max-width: toRem(300px);
   }
