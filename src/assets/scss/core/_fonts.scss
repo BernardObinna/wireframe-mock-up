@@ -1,0 +1,160 @@
+//@font-face {
+//  font-family: 'Circular';
+//  src: url('./assets/FontFiles/circular/CircularStd-Bold.ttf') format('truetype');
+//  font-weight: bold;
+//  font-display: swap;
+//  font-style: normal;
+//}
+
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('./assets/FontFiles/recolecta/Recoleta-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('./assets/FontFiles/recolecta/Recoleta-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('./assets/FontFiles/recolecta/Recoleta-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('./assets/FontFiles/recolecta/Recoleta-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('./assets/FontFiles/circular/CircularStd-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Circular', sans-serif;
+}
+
+p {
+  font-family: 'Circular', sans-serif;
+  font-size: toRem(16px);
+  line-height: toRem(24px);
+  color: $color-heading-black;
+}
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6{
+  font-family: 'Recoleta', 'Circular', sans-serif !important;
+  color: $color-heading-black;
+}
+
+p,
+small,
+label,
+span,
+input, button{
+  font-family: 'Circular', sans-serif !important;
+  color: $color-heading-black;
+}
+
+.h1,
+h1 {
+  font-size: toRem(56px);
+  line-height: toRem(72px);
+  font-weight: 700;
+  @include screen('med') {
+    font-size: toRem(32px);
+    line-height: toRem(48px);
+  }
+}
+
+.h2,
+h2 {
+  font-weight: 600;
+  font-size: toRem(40px);
+  line-height: toRem(51px);
+}
+
+.h3,
+h3 {
+  font-weight: 500;
+  font-size: toRem(32px);
+  line-height: toRem(40px);
+}
+
+.h4,
+h4 {
+  font-size: toRem(24px);
+  line-height: toRem(32px);
+  font-weight: 500;
+  @include screen('med') {
+    font-size: toRem(20px);
+  }
+}
+
+h5 {
+  font-size: toRem(20px);
+  line-height: toRem(32px);
+  font-weight: 500;
+  //@include screen('med') {
+  //  font-size: toRem(16px);
+  //  line-height: toRem(24px);
+  //}
+}
+
+label{
+  font-size: toRem(14px);
+  line-height: toRem(20px);
+}
+
+input,
+select, .form-control, .form-select {
+  padding-top: toRem(14px);
+  padding-bottom: toRem(14px);
+  font-size: toRem(16px);
+  line-height: toRem(24px);
+  border: 1px solid #CED0D5;
+  border-radius: 8px;
+}
+
+span.input-group-text {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 8px;
+  background: white;
+  min-width: 23%;
+  @include screen('med') {
+    font-size: toRem(14px);
+    line-height: toRem(18px);
+    min-width: 30%;
+    padding: 6px;
+  }
+}

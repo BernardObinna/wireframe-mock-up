@@ -3,14 +3,16 @@ import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import router from "./router";
-import axiosInstance from "@/utils/axios";
+// import axiosInstance from "@/utils/axios";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./assets/main.css";
+// import "./assets/main.css";
 
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-app.config.globalProperties.$http = axiosInstance;
+// app.config.globalProperties.$http = axiosInstance;
 
 app.mount("#app");
